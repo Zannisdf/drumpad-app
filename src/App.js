@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Pad from './components/Pad.js'
+import SoundBank from './assets/soundBank.js';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+class Drumpad extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      display: ''
+    };
   }
-}
 
-export default App;
+  handleDisplay = display => this.setState({ display })
+
+  render(){
+    return(
+      <div
+        id="drum-machine">
+        <div
+          id="display">
+          {this.state.display}
+        </div>
+        <div className="container">
+          {SoundBank.map(data =>
+            <Pad
+              id={data.id}
+              keyCode={data.keyCode}
+              keyTrigger={data.keyTrigger}
+              url={data.url}
+              display={this.handleDisplay}/>)}
+        </div>
+      </div>
+    )
+  }
+};
+
+export default Drumpad;
