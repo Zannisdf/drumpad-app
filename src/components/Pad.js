@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Inactive from '../assets/inactive.js';
-import Active from '../assets/active.js';
+import { inactive, active } from '../assets/styles'
 
 class Pad extends Component{
   constructor(props){
     super(props);
     this.state = {
-      style: Inactive
+      style: inactive
     }
   }
 
@@ -28,10 +27,10 @@ class Pad extends Component{
   switchStyle = () => {
     this.state.style.color === '#dddddd' ?
       this.setState({
-        style: Active
+        style: active
       }) :
       this.setState({
-        style: Inactive
+        style: inactive
       })
   }
 

@@ -1,8 +1,0 @@
-const Active = {
-  color: 'orange',
-  boxShadow: '1px 1px 3px orange',
-  paddingTop: '2px',
-  marginTop: '7px'
-}
-
-export default Active;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Pad from './components/Pad.js'
-import SoundBank from './assets/soundBank.js';
+import Pad from './components/Pad'
+import SoundBank from './assets/soundBank';
 import './App.css';
 
 class Drumpad extends Component {
